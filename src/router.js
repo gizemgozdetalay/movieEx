@@ -4,6 +4,8 @@ import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register";
 import MovieSearch from "./views/MovieSearch";
+import Deneme from "./views/Deneme";
+import MovieDetail from "./components/MovieDetail";
 
 Vue.use(Router);
 
@@ -26,9 +28,20 @@ export default new Router({
       component: Register
     },
     {
-      path: "/moviesearch",
-      name: "movie-search",
+      path: "/movies",
+      name: "movies",
       component: MovieSearch
+    },
+    {
+      path: "/deneme",
+      name: "deneme",
+      component: Deneme
+    },
+    {
+      path: "/movies/:id",
+      name: "Movie",
+      props: true,
+      component: MovieDetail
     },
     {
       path: "/about",
