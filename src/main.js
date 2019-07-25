@@ -1,4 +1,6 @@
 import "vuetify/dist/vuetify.min.css";
+import "@mdi/font/css/materialdesignicons.css"
+
 
 import Vue from "vue";
 import Vuelidate from "vuelidate";

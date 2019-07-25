@@ -11,7 +11,7 @@
         <v-btn to="/login" flat>Login</v-btn>
         <v-btn to="/register" flat>Register</v-btn>
         <v-btn to="/about" flat>About</v-btn>
-        <v-btn to="/moviesearch" flat>Search</v-btn>
+        <v-btn to="/movies" flat>Search</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
