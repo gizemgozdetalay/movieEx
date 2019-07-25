@@ -1,5 +1,5 @@
 import "vuetify/dist/vuetify.min.css";
-import "@mdi/font/css/materialdesignicons.css"
+import "@mdi/font/css/materialdesignicons.css";
 
 
 import Vue from "vue";
@@ -8,7 +8,7 @@ import "./plugins/vuetify";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import axios from 'axios';
+import axios from "axios";
 
 Vue.use(Vuelidate);
 Vue.use(axios);

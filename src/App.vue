@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-toolbar dark color="rgba(50,98,162,0.54)" app>
       <v-toolbar-title class="headline text-uppercase">
         <span>VUE</span>
