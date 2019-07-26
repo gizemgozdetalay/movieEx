@@ -1,43 +1,45 @@
 <template>
-    <v-container v-if="loading">
-        <div class="text-xs-center">
-            <v-progress-circular
-                    indeterminate
-                    :size="150"
-                    :width="8"
-                    color="green">
-            </v-progress-circular>
-        </div>
-    </v-container>
-    <v-container v-else grid-list-xl>
-        <v-layout wrap>
-            <v-flex xs4
-                    v-for="(item, index) in wholeResponse"
-                    :key="index"
-                    mb-2>
-                <v-card>
-                    <v-img
-                            :src="item.Poster"
-                            aspect-ratio="1"
-                    ></v-img>
-                    <v-card-title primary-title>
-                        <div>
-                            <h2>{{item.Title}}</h2>
-                            <div>Year: {{item.Year}}</div>
-                            <div>Type: {{item.Type}}</div>
-                            <div>IMDB-id: {{item.imdbID}}</div>
-                        </div>
-                    </v-card-title>
-                    <v-card-actions class="justify-center">
-                        <v-btn flat
-                               color="green"
-                               @click="singleMovie(item.imdbID)"
-                        >View</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-flex>
-        </v-layout>
-    </v-container>
+    <v-card
+            max-width="332"
+            class="mx-auto"
+    >
+        <v-container
+                class="pa-2"
+                fluid
+                grid-list-md
+        >
+            <v-layout column>
+
+                <v-flex
+                        v-for="(item, i) in items"
+                        :key="i"
+                >
+                    <v-card
+                            :color="item.color"
+                            dark
+                    >
+                        <v-list-item three-line>
+                            <v-list-item-content class="align-self-start">
+                                <v-list-item-title
+                                        class="headline mb-2"
+                                        v-text="item.title"
+                                ></v-list-item-title>
+
+                                <v-list-item-subtitle v-text="item.artist"></v-list-item-subtitle>
+                            </v-list-item-content>
+
+                            <v-list-item-avatar
+                                    size="125"
+                                    tile
+                            >
+                                <v-img :src="item.src"></v-img>
+                            </v-list-item-avatar>
+                        </v-list-item>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-card>
 </template>
 
 <script>
@@ -48,7 +50,22 @@
     data () {
       return {
         wholeResponse: [],
-        loading: true
+        loading: true,
+       items: [
+        {
+         color: '#1F7087',
+         src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
+         title: 'Supermodel',
+         artist: 'Foster the People',
+        },
+        {
+         color: '#952175',
+         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+         title: 'Halcyon Days',
+         artist: 'Ellie Goulding',
+        },
+       ],
+       lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`,
       }
     },
     mounted () {
